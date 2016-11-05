@@ -1,0 +1,28 @@
+<!-- 5. output the animalType string, pet boolean and fierceness number to the page for all the pets -->
+
+<h1>HEY...See below for the list of wishes!</h1>
+  {{#each plans }}
+  <ul>
+    <li>
+      <p>ID: {{ id }}</p>
+      <p>Wish: {{ plan }}</p>
+      <form action="/delete?_method=DELETE" method="POST">
+        <input type="hidden" name="id" value="{{ id }}"></textarea>
+        <button type="submit">Delete!</button>
+      </form>
+
+
+    </li>
+  </ul>
+  {{/each}}
+
+<form action="/quotes" method="POST">
+  <textarea type="text" name="newPlan">Add new plan</textarea>
+  <button type="submit">Submit</button>
+</form>
+
+<form action="/update" method="POST">
+  <textarea type="text" name="updateID">ID</textarea>
+  <textarea type="text" name="updatePlan">Add new plan</textarea>
+  <button type="submit">Submit</button>
+</form>
