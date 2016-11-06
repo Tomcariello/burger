@@ -1,28 +1,48 @@
-<!-- 5. output the animalType string, pet boolean and fierceness number to the page for all the pets -->
+<h1>Burgers!</h1>
 
-<h1>HEY...See below for the list of wishes!</h1>
-  {{#each plans }}
-  <ul>
-    <li>
-      <p>ID: {{ id }}</p>
-      <p>Wish: {{ plan }}</p>
-      <form action="/delete?_method=DELETE" method="POST">
-        <input type="hidden" name="id" value="{{ id }}"></textarea>
-        <button type="submit">Delete!</button>
-      </form>
+<h2>Burger Up!</h2>
 
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+      <li>
+        {{this.burger_name}}
 
-    </li>
-  </ul>
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="devour" value="true">
+          <button type="submit">EAT ME!</button>
+        </form>
+
+      </li>
+    {{/unless}}
   {{/each}}
+</ul>
 
-<form action="/quotes" method="POST">
-  <textarea type="text" name="newPlan">Add new plan</textarea>
-  <button type="submit">Submit</button>
-</form>
+<h2>Burgers eaten...order another?</h2>
 
-<form action="/update" method="POST">
-  <textarea type="text" name="updateID">ID</textarea>
-  <textarea type="text" name="updatePlan">Add new plan</textarea>
-  <button type="submit">Submit</button>
+<ul>
+  {{#each burgers}}
+    {{#if this.devoured}}
+      <li>
+        {{this.burger_name}}
+
+        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+          <input type="hidden" name="sleepy" value="false">
+          <button type="submit">WAKE UP!</button>
+        </form>
+
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Cat</h2>
+<form class="create-update-form" action="burgers/create" method="POST">
+
+  <div class="form-group">
+    <label for="newBurger">Burger Name:</label>
+    <input type="text" id="newBurger" name="newBurgerName">
+  </div>
+
+  <button type="submit">Add Burger</button>
 </form>
