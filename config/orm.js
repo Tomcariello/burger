@@ -3,29 +3,6 @@ Here is the O.R.M. where you write functions that takes inputs and conditions an
 */
 var connection = require('../config/connection.js');
 
-function printQuestionMarks(num) {
-	var arr = [];
-
-	for (var i = 0; i < num; i++) {
-		arr.push('?');
-	}
-
-	return arr.toString();
-}
-
-function objToSql(ob) {
-	// column1=value, column2=value2,...
-	var arr = [];
-
-	for (var key in ob) {
-		if (ob.hasOwnProperty(key)) {
-			arr.push(key + '=' + ob[key]);
-		}
-	}
-
-	return arr.toString();
-}
-
 var orm = {
 	all: function (tableInput, cb) {
 		var queryString = 'SELECT * FROM ' + tableInput + ';';
@@ -35,18 +12,9 @@ var orm = {
 			cb(result);
 		});
 	},
-		// vals is an array of values that we want to save to cols
-		// cols are the columns we want to insert the values into
+
 	create: function (table, cols, vals, cb) {
 		var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false, CURDATE());';
-
-// INSERT INTO burgers (burger_name, devoured, date) VALUES (raechel's burger, false, CURDATE();
-
-
-
-
-
-		console.log(queryString);
 
 		connection.query(queryString, vals, function (err, result) {
 			if (err) throw err;
@@ -55,25 +23,12 @@ var orm = {
 	},
 		// objColVals would be the columns and values that you want to update
 		// an example of objColVals would be {name: panther, sleepy: true}
-	update: function (table, objColVals, condition, cb) {
-		var queryString = 'UPDATE ' + table;
+	update: function (id, cb) {
+		console.log("in update query: " + id);
 
-		queryString = queryString + ' SET ';
-		queryString = queryString + objToSql(objColVals);
-		queryString = queryString + ' WHERE ';
-		queryString = queryString + condition;
+		var queryString = 'UPDATE burgers SET devoured=true WHERE id =' + id + ';';
 
 		console.log(queryString);
-		connection.query(queryString, function (err, result) {
-			if (err) throw err;
-			cb(result);
-		});
-	},
-	delete: function (table, condition, cb) {
-		var queryString = 'DELETE FROM ' + table;
-		queryString = queryString + ' WHERE ';
-		queryString = queryString + condition;
-
 		connection.query(queryString, function (err, result) {
 			if (err) throw err;
 			cb(result);
