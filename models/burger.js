@@ -14,6 +14,8 @@ var burger = {
 	create: function (cols, vals, cb) {
 		console.log('creating burger in burger.js');
 		console.log('clog: ' + cols + "|" + vals);
+		//cols is the name of the burger submitted
+		//vals if function()
 		orm.create('burgers', cols, vals, function (res) {
 			cb(res);
 		});
