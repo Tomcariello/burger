@@ -18,6 +18,8 @@ router.get('/burgers', function (req, res) {
 });
 
 router.post('/burgers/create', function (req, res) {
+	console.log('burger submitted for creation');
+	console.log(req.body);
 	burger.create([req.body.newBurgerName], function () {
 		res.redirect('/burgers');
 	});
