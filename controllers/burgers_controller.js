@@ -21,8 +21,9 @@ router.post('/burgers/create', function (req, res) {
 	console.log('burger submitted for creation');
 	console.log(req.body);
 	burger.create([req.body.newBurgerName], function () {
-		res.redirect('/burgers');
+		
 	});
+	res.redirect('/burgers');
 });
 
 router.put('/burgers/update/:id', function (req, res) {
