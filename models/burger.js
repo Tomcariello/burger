@@ -13,7 +13,7 @@ var burger = {
 	// cols and vals are arrays
 	create: function (cols, vals, cb) {
 		console.log('creating burger in burger.js');
-		console.log('clog: ' + cols + "|" + val);
+		console.log('clog: ' + cols + "|" + vals);
 		orm.create('burgers', cols, vals, function (res) {
 			cb(res);
 		});
