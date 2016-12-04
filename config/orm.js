@@ -14,8 +14,11 @@ var orm = {
 	},
 
 	create: function (table, cols, vals, cb) {
-		var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false, CURDATE());';
+		var queryString = 'INSERT INTO burgers (burger_name, devoured, createdAt) VALUES ("' + cols + '", false, CURDATE());';
+		//CONFIRMED CODE IN DASHBOARD: INSERT INTO burgers (burger_name, devoured, createdAt) VALUES ("chees", false, CURDATE());
 		console.log(queryString);
+
+
 		connection.query(queryString, vals, function (err, result) {
 			if (err) throw err;
 			cb(result);
