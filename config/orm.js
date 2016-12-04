@@ -15,7 +15,7 @@ var orm = {
 
 	create: function (table, cols, vals, cb) {
 		var queryString = 'INSERT INTO burgers (burger_name, devoured, date) VALUES ("' + cols + '", false, CURDATE());';
-
+		console.log(queryString);
 		connection.query(queryString, vals, function (err, result) {
 			if (err) throw err;
 			cb(result);
