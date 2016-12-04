@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: not test specified\" && exit 1"
     },
   "author": "tom cariello",
   "license": "ISC",
