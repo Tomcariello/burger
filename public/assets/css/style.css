@@ -1,5 +1,5 @@
 li {
-  background: #FAEBD7;
+/*  background: #FAEBD7;*/
   margin: 5px;
   padding: 5px;
 }
@@ -8,12 +8,19 @@ li {
   font-weight: bold;
 }
 
-.create-update-form {
-  background: aqua;
+.window {
   margin: 5px;
   padding: 5px;
+  text-align: center;
 }
 
 .form-group {
   margin-bottom: 5px;
 }
+
+.frame {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+

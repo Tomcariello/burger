@@ -14,8 +14,9 @@ var orm = {
 	},
 
 	create: function (table, cols, vals, cb) {
-		var queryString = 'INSERT INTO burgers (burger_name, devoured, createdAt) VALUES ("' + cols + '", false, CURDATE());';
-		//CONFIRMED CODE IN DASHBOARD: INSERT INTO burgers (burger_name, devoured, createdAt) VALUES ("chees", false, CURDATE());
+		var queryString = 'INSERT INTO burgers (burger_name, devoured, createdAt, updatedAt) VALUES ("' + cols + '", false, CURDATE(), CURDATE())';
+		//Workbench code : INSERT INTO burgers (burger_name, devoured, createdAt, updatedAt) VALUES ("cheese burger", false, CURDATE(), CURDATE())
+
 		console.log(queryString);
 
 

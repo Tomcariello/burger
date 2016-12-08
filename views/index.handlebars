@@ -1,9 +1,26 @@
-<h1>Burgers!</h1>
+<div class ="row">
+  <div class="col-xs-12 window">
+    <h1>Ordering Window!</h1>
+  </div>
+</div>
+
+<div class ="row">
+  <div class="col-xs-12 frame">
+    <h2>Add a Burger</h2>
+    <form class="create-update-form" action="burgers/create" method="POST">
+      <div class="form-group">
+        <label for="newBurger">Burger Name:</label>
+        <input type="text" id="newBurger" name="newBurgerName">
+        <button type="submit">Add Burger</button>
+      </div>
+    </form>
+  </div>
+</div>
 
 <div class ="row">
   <div class="col-xs-6">
 
-  <h2>Burger Up!</h2>
+  <h2>Burgers Hot off the grill!</h2>
 
     <ul>
       {{#each burgers}}
@@ -23,7 +40,7 @@
   </div>
 
   <div class="col-xs-6">
-    <h2>Burgers eaten...order another?</h2>
+    <h2>Burgers already eaten.</h2>
 
     <ul>
       {{#each burgers}}
@@ -38,17 +55,4 @@
 </div>
 
 
-<div class ="row">
-  <div class="col-xs-12">
-    <h2>Add a Burger</h2>
-    <form class="create-update-form" action="burgers/create" method="POST">
 
-      <div class="form-group">
-        <label for="newBurger">Burger Name:</label>
-        <input type="text" id="newBurger" name="newBurgerName">
-      </div>
-
-      <button type="submit">Add Burger</button>
-    </form>
-  </div>
-</div>
