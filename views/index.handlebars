@@ -1,16 +1,16 @@
 <div class ="row">
   <div class="col-xs-12 window">
-    <h1>Ordering Window!</h1>
+    <h1>Things to do!</h1>
   </div>
 </div>
 
 <div class ="row">
   <div class="col-xs-12 frame">
-    <h2>Add a Burger</h2>
+    <h2>Add a task</h2>
     <form class="create-update-form" action="burgers/create" method="POST">
       <div class="form-group">
-        <label for="newBurger">Burger Name:</label>
-        <input type="text" id="newBurger" name="newBurgerName">
+        <label for="newBurger">Task Name:</label>
+        <input type="text" id="newTask" name="newBurgerName">
         <button type="submit">Add Burger</button>
       </div>
     </form>
@@ -20,7 +20,7 @@
 <div class ="row">
   <div class="col-xs-6">
 
-  <h2>Burgers Hot off the grill!</h2>
+  <h2>Tasks to do:</h2>
 
     <ul>
       {{#each burgers}}
@@ -30,7 +30,7 @@
 
             <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
               <input type="hidden" name="devour" value="true">
-              <button type="submit">EAT ME!</button>
+              <button type="submit">DONE!</button>
             </form>
 
           </li>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="col-xs-6">
-    <h2>Burgers already eaten.</h2>
+    <h2>Tasks completed.</h2>
 
     <ul>
       {{#each burgers}}
