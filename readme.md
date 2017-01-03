@@ -1,4 +1,4 @@
-# Eat Da Burger
+# Honey Do List
 
 11-05-2016
 Using class demo for start code, built framework
@@ -10,8 +10,19 @@ add burger feature working
 Add functionality for DEVOUR button
 Link to bootstrap CDN & set basic layout paramaters (still ugly)
 
+12-30-2016
+Re-theme as "Honey Do" list
+Make page prettier:
+  Button style
+  Font adjustments
+  Added some color
+
+1-3-2017
+Add Line-through to finished tasks
+Set sticky footer
+
 To Do:
 Adjust ORMS to remove anything specific to this particular SQL DB
-Make page pretty
 Purge unnecessary code
-Refactor code to be sure that all function/variable names are clear (and not cat related)
+Refactor code to be sure that all function/variable names are clear (and not cat or burger related)
+Add Delete button for completed tasks
